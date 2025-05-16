@@ -5,7 +5,7 @@ services:
     container_name: sitevitrine-db
     environment:
       POSTGRES_USER: florian
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: admin
       POSTGRES_DB: sitevitrine
     ports:
       - "5432:5432"
