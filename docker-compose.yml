@@ -1,20 +1,16 @@
 version: '3.8'
 services:
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"
-  backend:
-    build:
-      context: ./backend
-    ports:
-      - "8080:8080"
-  db:
+  postgres:
     image: postgres:14
+    container_name: sitevitrine-db
     environment:
-      POSTGRES_USER: user
+      POSTGRES_USER: florian
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+      POSTGRES_DB: sitevitrine
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
