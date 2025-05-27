@@ -32,7 +32,7 @@ jobs:
 
       - name: Vérifier la connexion à PostgreSQL
         run: |
-          PGPASSWORD=admin psql -h postgres -U florian -d sitevitrine -c "\dt"
+          PGPASSWORD=admin psql -h localhost -U florian -d sitevitrine -c "\dt"
 
       - name: Logs de PostgreSQL en CI
         run: |
