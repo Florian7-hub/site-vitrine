@@ -34,6 +34,12 @@ jobs:
         run: |
           PGPASSWORD=admin psql -h localhost -U florian -d sitevitrine -c "\dt"
 
+      - name: Construire et tester l'application
+        run: |
+          ./mvnw clean install
+          ./mvnw test
+
+
       - name: Logs de PostgreSQL en CI
         run: |
           docker logs $(docker ps -q --filter ancestor=postgres:14)
