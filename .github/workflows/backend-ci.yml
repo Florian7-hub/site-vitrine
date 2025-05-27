@@ -28,6 +28,7 @@ jobs:
 
       - name: Construire et tester l'application
         run: |
+          sleep 10
           cd backend
           ./mvnw clean install
           ./mvnw test
