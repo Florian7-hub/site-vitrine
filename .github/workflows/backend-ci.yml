@@ -2,7 +2,7 @@ name: Backend CI
 
 on:
   push:
-    branches: [main, feature/*]
+    branches: [main, dev, feature/*]
 
 jobs:
   build:
@@ -26,9 +26,22 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Afficher les conteneurs actifs en CI
+        run: |
+          docker ps -a
+
+      - name: Vérifier la connexion à PostgreSQL
+        run: |
+          PGPASSWORD=admin psql -h localhost -U florian -d sitevitrine -c "\dt"
+
       - name: Construire et tester l'application
         run: |
-          sleep 10
           cd backend
           ./mvnw clean install
           ./mvnw test
+
+
+      - name: Logs de PostgreSQL en CI
+        run: |
+          docker logs $(docker ps -q --filter ancestor=postgres:14)
+
