@@ -26,7 +26,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Construire et tester l'application
+      - name: Vérifier la connexion à PostgreSQL
+        run: |
+          PGPASSWORD=admin psql -h postgres -U florian -d sitevitrine -c "\dt"
+
+      - name: Vérifier la connexion à Postgre, construire et tester l'application
         run: |
           until pg_isready -h postgres -p 5432; do
             echo "Attente de PostgreSQL..."
