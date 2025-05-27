@@ -2,7 +2,7 @@ name: Backend CI
 
 on:
   push:
-    branches: [main, feature/*]
+    branches: [main, dev, feature/*]
 
 jobs:
   build:
@@ -28,10 +28,11 @@ jobs:
 
       - name: Construire et tester l'application
         run: |
-            until pg_isready -h postgres -p 5432; do
-              echo "Attente de PostgreSQL..."
-              sleep 2
-            done
+          until pg_isready -h postgres -p 5432; do
+            echo "Attente de PostgreSQL..."
+            sleep 2
+          done
+          echo "PostgreSQL est prêt !"
             cd backend
             ./mvnw clean install
             ./mvnw test
