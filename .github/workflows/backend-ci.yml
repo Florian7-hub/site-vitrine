@@ -26,17 +26,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Afficher les conteneurs actifs en CI
+        run: |
+          docker ps -a
+
       - name: Vérifier la connexion à PostgreSQL
         run: |
           PGPASSWORD=admin psql -h postgres -U florian -d sitevitrine -c "\dt"
 
-      - name: Vérifier la connexion à Postgre, construire et tester l'application
+      - name: Logs de PostgreSQL en CI
         run: |
-          until pg_isready -h postgres -p 5432; do
-            echo "Attente de PostgreSQL..."
-            sleep 2
-          done
-          echo "PostgreSQL est prêt !"
-            cd backend
-            ./mvnw clean install
-            ./mvnw test
+          docker logs $(docker ps -q --filter ancestor=postgres:14)
+
