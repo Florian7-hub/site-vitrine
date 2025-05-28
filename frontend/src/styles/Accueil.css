@@ -1,0 +1,50 @@
+body {
+  background-color: #2C3E50; /* Bleu-gris élégant */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px; /* Décale les éléments vers le bas */
+}
+
+.accueil-header {
+  padding: 6px 20px;
+  background: #F39C12; /* Orange doré */
+  color: white;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 22px;
+  position: relative;
+  margin-bottom: 30px; /* Décale les chantiers vers le bas */
+}
+
+
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px; /* Espace entre le titre et les photos */
+}
+
+.chantier-card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.chantier-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.chantier-card:hover {
+  transform: scale(1.05);
+}
