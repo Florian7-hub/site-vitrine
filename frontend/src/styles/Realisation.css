@@ -1,0 +1,161 @@
+body {
+  background-color: #2C3E50;
+  color: white;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.realisation-header {
+  padding: 10px 20px;
+  background: #3498DB;
+  color: white;
+  border-radius: 8px;
+  font-size: 22px;
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+}
+
+.realisation-content {
+  display: flex;
+  justify-content: center; /* Garde l’image bien centrée */
+  position: relative;
+}
+
+.main-photo {
+  flex-shrink: 0; /* Empêche l’image de bouger */
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: auto; /* Fixe l’image bien au centre */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.description-container {
+  position: absolute;
+  right: 0; /* Place le texte à droite */
+  width: 30%; /* Ajuste la largeur sans modifier l’image */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste la hauteur pour s’aligner avec l’image */
+}
+
+.realisation-description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-photo {
+  width: 100px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery-photo:hover {
+  transform: scale(1.1);
+}
+
+.back-button {
+  position: absolute;
+  bottom: -50px;
+  left: -100px;
+  padding: 8px 12px;
+  background: #E74C3C;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: #C0392B;
+  transform: scale(1.1);
+}
+
+/* Modal Zoom */
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoomed-photo {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoomed-photo.maximized {
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(1.1);
+}
+
+/* Bouton de fermeture */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Flèches de navigation */
+.nav-button {
+  position: absolute;
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
