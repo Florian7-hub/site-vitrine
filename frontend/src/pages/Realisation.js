@@ -68,18 +68,19 @@ function Realisation() {
           <button className="close-button" onClick={(e) => {
             e.stopPropagation();
             setZoomedImage(null);
-          }}>✖</button>
+          }}>Fermer ❌
+          </button>
           {zoomedImage.index > 0 && (
             <button className="nav-button left" onClick={(e) => {
               e.stopPropagation();
               changeImage(-1);
-            }}>◀</button>
+            }}>←</button>
           )}
           {zoomedImage.index < realisation.photos.length - 1 && (
             <button className="nav-button right" onClick={(e) => {
               e.stopPropagation();
               changeImage(1);
-            }}>▶</button>
+            }}>→</button>
           )}
         </div>
       )}

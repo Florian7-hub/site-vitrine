@@ -11,39 +11,40 @@ body {
 }
 
 .realisation-header {
-  padding: 10px 20px;
-  background: #3498DB;
-  color: white;
-  border-radius: 8px;
-  font-size: 22px;
   position: absolute;
-  left: -100px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: auto;
+  top: 20px;
+  left: 15px; /* Déplacement propre sur la gauche */
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 5px 10px;
+  background: rgba(52, 152, 219, 0.75);
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+
 
 .realisation-content {
   display: flex;
-  justify-content: center; /* Garde l’image bien centrée */
-  position: relative;
+  flex-direction: column; /* Place l’image et le texte en colonne */
+  align-items: center; /* Centre les éléments */
 }
 
 .main-photo {
-  flex-shrink: 0; /* Empêche l’image de bouger */
+  flex-shrink: 0;
   width: 100%;
   max-width: 600px;
   border-radius: 10px;
-  margin: auto; /* Fixe l’image bien au centre */
+  margin: auto;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .description-container {
-  position: absolute;
-  right: 0; /* Place le texte à droite */
-  width: 30%; /* Ajuste la largeur sans modifier l’image */
-  top: 50%; /* Centre verticalement */
-  transform: translateY(-50%); /* Ajuste la hauteur pour s’aligner avec l’image */
+  width: 80%;
+  margin-top: 20px; /* Ajoute un espace sous l’image */
+  text-align: center;
+  position: static; /* Supprime le positionnement absolu */
 }
 
 .realisation-description {
@@ -116,40 +117,39 @@ body {
   transform: scale(1.1);
 }
 
-/* Bouton de fermeture */
 .close-button {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 28px;
-  background: rgba(255, 255, 255, 0.2);
+  font-size: 18px; /* Encore plus petit */
+  font-weight: 200; /* Très fin */
+  background: transparent;
   border: none;
   color: white;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  transition: background 0.3s ease;
+  padding: 5px;
+  transition: color 0.3s ease;
 }
 
 .close-button:hover {
-  background: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4); /* Effet plus subtil */
 }
 
-/* Flèches de navigation */
 .nav-button {
   position: absolute;
-  font-size: 32px;
-  background: rgba(255, 255, 255, 0.2);
+  font-size: 40px; /* Garde la taille actuelle des flèches */
+  font-weight: 300; /* Flèches plus fines */
+  background: transparent; /* Supprime le fond pour un effet épuré */
   border: none;
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 50%;
-  transition: background 0.3s ease;
+  padding: 5px; /* Ajustement pour une meilleure ergonomie */
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-button:hover {
-  background: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7); /* Effet subtil au survol */
+  transform: scale(1.1); /* Légère animation sans déformation */
 }
 
 .left {
